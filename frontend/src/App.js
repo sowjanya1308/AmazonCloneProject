@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './screens/home/home';
+import Login from './screens/auth/login/login';
+import Register from './screens/auth/register/register';
+import Forgotpass from './screens/auth/forgotpassword/forgotpass';
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello!</h1>
-    </div>
+    <Routes>
+      <Route path='/' Component={Home}/>
+      <Route path='/login' Component={Login}/>
+      <Route path='/register' Component={Register}/>
+      <Route path='/forgotpassword' Component={Forgotpass}/>
+    </Routes>
   )
 }
 
