@@ -1,0 +1,13 @@
+.header{
+    background-color: black;
+    height: 50px;
+}
+.logo{
+    background-image: url("../../../src/images/Icons/nav-sprite-global-1x-reorg-privacy._CB600086755_.png");
+    background-position: -8px -49px;
+}
+
+.basket{
+    background-image: url("../../../src/images/Icons/nav-sprite-global-1x-reorg-privacy._CB600086755_.png");
+    background-position: 90px 10px;
+}
