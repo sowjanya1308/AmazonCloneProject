@@ -4,6 +4,8 @@ import Home from './screens/home/home';
 import Login from './screens/auth/login/login';
 import Register from './screens/auth/register/register';
 import Forgotpass from './screens/auth/forgotpassword/forgotpass';
+import Header from './screens/components/header';
+
 
 const App = () => {
   return (
@@ -12,6 +14,7 @@ const App = () => {
       <Route path='/login' Component={Login}/>
       <Route path='/register' Component={Register}/>
       <Route path='/forgotpassword' Component={Forgotpass}/>
+      <Route path='/header' Component={Header}/>
     </Routes>
   )
 }
