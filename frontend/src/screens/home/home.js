@@ -6,7 +6,30 @@ const Home = () => {
   return (
     <>
       <Header/>
-      <Card/>
+      
+          <div className='grid grid-cols-5 gap-5 p-[20px]  h-[100vh]'>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+          </div>
+      
     </>
   )
 }
