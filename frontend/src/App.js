@@ -14,7 +14,6 @@ const App = () => {
       <Route path='/login' Component={Login}/>
       <Route path='/register' Component={Register}/>
       <Route path='/forgotpassword' Component={Forgotpass}/>
-      <Route path='/header' Component={Header}/>
     </Routes>
   )
 }
