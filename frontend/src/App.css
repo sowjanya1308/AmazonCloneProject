@@ -7,6 +7,7 @@ body{
     user-select: none;
     height: 100vh;
     overflow-x: hidden;
+    background-color: antiquewhite;
 }
 
 
@@ -33,6 +34,11 @@ body{
     display: none;
 }
 
+.auto-col-grid{
+    width: 100%;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+
 .home{
     /* grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); */
     /* grid-template-columns: repeat(auto-fill,minmax(20vh,2fr)); */
@@ -40,6 +46,25 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
+}
+
+
+/* category grid component */
+
+.category{
+    grid-template-columns: repeat(2,minmax(130px,5fr));
+    min-height: 130px;
+    min-width: 130px;
+}
+
+.category img{
+    max-height: 130px;
+    object-fit:fill;
+}
+
+.category>div{
+    display: flex;
+    justify-content: center;
 }
 
 
