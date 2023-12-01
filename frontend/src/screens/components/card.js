@@ -4,16 +4,28 @@ import { IoHeartOutline } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import { TiStarFullOutline } from "react-icons/ti";
 
-const Card = () => {
+const Card = (props) => {
+
+  function fav(id){
+    const outline = document.getElementsByClassName("outline-heart").item(id);
+    const filled = document.getElementsByClassName("filled-heart").item(id);
+    if(outline.style.display === "none"){
+      outline.style.display = "block"
+      filled.style.display = "none"
+    }else{
+      outline.style.display = "none"
+      filled.style.display = "block"
+    }
+  }
+
   return (
     <>
-      <div className='card shadow-lg rounded-[8px] border flex flex-col w-fit relative'>
-        <div className='absolute top-[5%] right-[7%] z-10'>
-          <IoHeartOutline color='red' fill='#000'/>
-          {/* <FaHeart color='red'/> */}
+      <div className='card shadow-lg rounded-[8px] border flex flex-col h-auto relative'>
+        <div onClick={()=>fav(props.id)} className='absolute top-[5%] hover:shadow-lg hover:rounded-full p-2 right-[7%] z-10'>
+          <IoHeartOutline className='outline-heart' size={25} color='red' fill='#000' style={{"display":"block"}}/>
+          <FaHeart className='filled-heart' size={24} color='red' style={{"display":"none"}}/>
         </div>
-        
-        <div className='flex h-[345px] w-[258px] relative'>
+        <div className='flex h-[345px] justify-center w-auto relative'>
             <img src={watch} alt='watch' className='object-cover'/>
             <div className='absolute bottom-[5%] right-[7%]'>
               <span className='px-3 rounded shadow-lg flex items-center'>5
