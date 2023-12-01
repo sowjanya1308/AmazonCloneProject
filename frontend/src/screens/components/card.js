@@ -20,7 +20,7 @@ const Card = (props) => {
 
   return (
     <>
-      <div className='card shadow-lg rounded-[8px] border flex flex-col h-auto relative'>
+      <div className='card shadow-lg rounded-[8px] border flex flex-col h-auto relative bg-white'>
         <div onClick={()=>fav(props.id)} className='absolute top-[5%] hover:shadow-lg hover:rounded-full p-2 right-[7%] z-10'>
           <IoHeartOutline className='outline-heart' size={25} color='red' fill='#000' style={{"display":"block"}}/>
           <FaHeart className='filled-heart' size={24} color='red' style={{"display":"none"}}/>
