@@ -6,15 +6,18 @@ import watch3 from "../../images/watch3.png";
 import { TiStarFullOutline } from "react-icons/ti";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { GiReturnArrow } from "react-icons/gi";
-import { IoLocationOutline } from "react-icons/io5";
+import { IoLocationOutline, IoPersonCircleOutline } from "react-icons/io5";
 import Header from "../components/header";
+import Reviews from './reviews';
+import HorizontalScrollCards from './horizontalScrollCards';
+
 
 const Product = () => {
   return (
     <>
       <Header/>
       <div className='flex'>
-        <div className='p-20'>
+        <div className='pl-20 pt-10'>
             <img src={watch} alt ="img"/>
             <div class="grid grid-cols-4 gap-2">
                 <div className='pt-4'>
@@ -35,19 +38,21 @@ const Product = () => {
                 
             </div>
         </div>
-        <div className='p-24'>
+        <div className='pl-24 pt-10'>
             <h1 className='text-4xl font-semibold'>Titan Quartz Multifunction White Dial Leather Strap Watch for Men</h1>
-            <div className='flex pt-8'>
+            <div className='pt-8'>
                 <div>
                     <h1 className="text-2xl font-normal">⭐⭐⭐⭐⭐</h1>
                 </div>
-                <div className='ml-36'>
+            </div>
+            <div className=' flex pt-4'>
+                <div>
+                    <h1 className="text-2xl font-Medium">MRP: ₹9145 <span></span></h1>
+                    <h1 className="text-xl line-through font-normal text-rose-600">₹9695</h1>
+                </div>
+                <div className='ml-10'>
                     <h1 className="text-xl text-center font-normal deal h-[30px] w-[60px] text-white animate-bounce">Deal</h1>
                 </div>
-            </div>
-            <div className='pt-4'>
-                <h1 className="text-2xl font-Medium">MRP: ₹9145 <span></span></h1>
-                <h1 className="text-xl line-through font-normal text-rose-600">₹9695</h1>
             </div>
             <div>
                 <div>
@@ -84,12 +89,12 @@ const Product = () => {
                             <div className='pt-5 ml-20'>
                                 <h1 className=' text-2xl font-medium text-green-700'>In Stock</h1>
                                 <div className="flex items-center mt-1">
-                                    <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded "/>
-                                    <label for="default-checkbox" className="ms-2 text-sm font-normal text-gray-900"> Free Delivery by 10/12/2023, order within 2hr 35min</label>
+                                    <input id="default-radio-1" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded "/>
+                                    <label for="default-radio-1" className="ms-2 text-sm font-normal text-gray-900"> Free Delivery by 10/12/2023, order within 2hr 35min</label>
                                 </div>
                                 <div className="flex items-center mt-1">
-                                    <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded "/>
-                                    <label for="default-checkbox" className="ms-2 text-sm font-normal text-gray-900">Fast Delivery by 6/12/2023</label>
+                                    <input id="default-radio-1" type="radio" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded "/>
+                                    <label for="default-radio-1" className="ms-2 text-sm font-normal text-gray-900">Fast Delivery by 6/12/2023</label>
                                 </div>
                                 <div className="flex items-center mt-1">
                                     <IoLocationOutline/>
@@ -124,6 +129,32 @@ const Product = () => {
                 </div>
             </div>
         </div>    
+      </div>
+
+      {/* reviews */}
+      <div>
+        <h1 className='font-bold text-3xl pl-20 pt-10'>Reviews</h1>
+        <div className='pl-20 pt-10 flex'>
+            <div>
+                <Reviews/>
+            </div>
+            <div className='pl-10'>
+                <Reviews/>
+            </div>
+            <div className='pl-10'>
+                <Reviews/>
+            </div>
+            
+        </div>
+      </div>
+
+      {/* recommended  */}
+
+      <div>
+        <h1 className='font-bold text-3xl pl-20 pt-10'>You may also like...</h1>
+        <div className='pt-3'>
+            <HorizontalScrollCards/>
+        </div>
       </div>
     </>
   )
