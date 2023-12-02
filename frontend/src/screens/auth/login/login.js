@@ -3,7 +3,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 const Login = (props) => {
 
-  const [signup, setSignup] = useState(true);
+  const [signup, setSignup] = useState(false);
 
   return (
     <>
