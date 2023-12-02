@@ -51,7 +51,7 @@ const Header = () => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   
-                  <a href="/" className="bg-fuchsia-950 text-white rounded-md px-3 py-2 text-sm font-medium">Categories</a>
+                  <a href="/" className="text-white bg-fuchsia-950 rounded-md px-3 py-2 text-sm font-medium">Categories</a>
                   <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">New Releases</a>
                   <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Buy Again</a>
                   <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Wishlist</a>
