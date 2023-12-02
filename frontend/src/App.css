@@ -145,3 +145,7 @@ label{
         transform: translateX(-40vw);
     }
 }
+/* product page */
+.msgs{
+    border-radius: 15px;
+}
