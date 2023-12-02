@@ -112,6 +112,39 @@ label{
     border-radius: 3px;
 }
 
+/* header */
+
+.single-line{
+    white-space: nowrap;
+}
+
+.animate-sidebar{
+    transform: translateX(0);
+    animation: ease-in 200ms side;
+}
+
+@keyframes side {
+    0%{
+        transform: translateX(-40vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.close-sidebar{
+    transform: translateX(-40vw);
+    animation: ease-in 200ms close;
+}
+
+@keyframes close {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-40vw);
+    }
+}
 /* product page */
 .msgs{
     border-radius: 15px;
