@@ -82,7 +82,7 @@ body{
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(189,189,189,0.9);
+    background-color: rgba(189,189,189,0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +93,8 @@ body{
     /* left: 35%;
     top: 25%; */
     width: 450px;
+    animation: bounce 1s ease-in-out;
+    animation-iteration-count: calc(.5);
 }
 
 label{
@@ -108,5 +110,4 @@ label{
     display: block;
     border: 1px solid black;
     border-radius: 3px;
-    margin-bottom: 20px;
 }

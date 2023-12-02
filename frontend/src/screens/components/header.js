@@ -24,6 +24,8 @@ const Header = () => {
     }
   }
 
+  const closepopup=()=>setPopup(false);
+
   return (
     <>
       <nav className="bg-fuchsia-900">
@@ -106,7 +108,7 @@ const Header = () => {
                       <span className="sr-only">Open user menu</span>
                       <IoPersonCircleOutline className='text-white text-2xl'/>
                     </button>
-                    <Login showPopup={popup} />
+                    <Login showPopup={popup} close={closepopup}/>
                   </div>
                 </div>
                 
