@@ -73,3 +73,41 @@ body{
     background-color: red;
     border-radius: 5px;
 }
+
+/* login popup */
+.popup-wrapper{
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(189,189,189,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container{
+    position: fixed;
+    /* left: 35%;
+    top: 25%; */
+    width: 450px;
+    animation: bounce 1s ease-in-out;
+    animation-iteration-count: calc(.5);
+}
+
+label{
+    display: inline-block;
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+
+.input-field{
+    height: 25px;
+    width: 100%;
+    padding: 18px 5px;
+    display: block;
+    border: 1px solid black;
+    border-radius: 3px;
+}

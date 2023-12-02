@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoPersonCircleOutline, IoBagHandleOutline, IoSearchOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import logo from "../../images/logo.png";
+import Login from '../auth/login/login';
 
 const Header = () => {
+  const [popup, setPopup] = useState(false);
+
+  const showPopup=()=>{
+    switch(popup){
+      case true:{
+        setPopup(false);
+        return
+      }
+      case (false):{
+        setPopup(true);
+        return
+      }
+      default:{
+        setPopup(false);
+        return
+      }
+    }
+  }
+
+  const closepopup=()=>setPopup(false);
+
   return (
     <>
       <nav className="bg-fuchsia-900">
@@ -31,10 +53,10 @@ const Header = () => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   
-                  <a href="#" className="text-white rounded-md px-3 py-2 text-sm font-medium">Categories</a>
-                  <a href="#" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">New Releases</a>
-                  <a href="#" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Buy Again</a>
-                  <a href="#" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Wishlist</a>
+                  <a href="/" className="text-white bg-fuchsia-950 rounded-md px-3 py-2 text-sm font-medium">Categories</a>
+                  <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">New Releases</a>
+                  <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Buy Again</a>
+                  <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Wishlist</a>
                 </div>
               </div>
               <div className='pl-28'>  
@@ -81,11 +103,12 @@ const Header = () => {
                 
                 <div className="relative ml-3">
                   <div>
-                    <button type="button" className="relative flex text-sm focus:outline-none rounded hover:bg-fuchsia-950" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <button onClick={showPopup} type="button" className="relative flex text-sm focus:outline-none rounded hover:bg-fuchsia-950" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                       <span className="absolute -inset-1.5"></span>
                       <span className="sr-only">Open user menu</span>
                       <IoPersonCircleOutline className='text-white text-2xl'/>
                     </button>
+                    <Login showPopup={popup} close={closepopup}/>
                   </div>
                 </div>
                 
