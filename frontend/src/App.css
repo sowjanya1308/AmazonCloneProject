@@ -154,6 +154,9 @@ label{
 .img{
     border-radius: 15px;
     background-color: #FFE4E1;
+}
 
-
+/* filters */
+.filters{
+    width: 15vw;
 }
