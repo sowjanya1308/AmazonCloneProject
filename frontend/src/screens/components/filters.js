@@ -4,9 +4,9 @@ const Filters = () => {
   return (
     <>
       <div className='container flex flex-col filters pt-10 pl-3'>
-        <div className='flex items-center'>
+        <div className='flex items-center justify-between'>
             <div><h1 className="font-semibold text-2xl">Filters</h1></div>
-            <div><h1 className="text-lg ml-20 font-normal text-blue-600">Clear all</h1></div>
+            <div><h1 className="text-lg font-normal text-blue-600">Clear all</h1></div>
         </div>
         <hr class="h-px mt-5 bg-black border-0 dark:bg-gray-700"/>
         <div>
