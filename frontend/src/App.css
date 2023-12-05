@@ -10,6 +10,10 @@ body{
     background-color: antiquewhite;
 }
 
+td, th{
+    border: 1px solid black;
+    padding: 5px;
+}
 
 /* card component */
 .card{
@@ -148,6 +152,13 @@ label{
 /* product page */
 .msgs{
     border-radius: 15px;
+}
+
+.img-stick{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
 }
 
 /* add to cart */
