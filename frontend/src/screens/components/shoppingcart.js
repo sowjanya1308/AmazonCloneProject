@@ -1,17 +1,19 @@
 import React from 'react';
 import watch from "../../images/watch.png"
+import Header from './header';
 
 
 const ShoppingCart = () => {
  return (
     <>
+    <Header/>
     <div className="container mx-auto">
         <div className="flex flex-col md:flex-row ml-5 m-5">
             <div className="md:w-1/2 md:pr-8">
             <div>
                 <h1 className="text-2xl font-bold mb-4">Contact</h1>
                 <div className="mb-4">
-                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900"></label>
                 <select id="countries" class="bg-gray-50 rounded px-2 py-1 ">
                     <option selected>Choose a country</option>
                     <option value="US">United States</option>
@@ -54,7 +56,7 @@ const ShoppingCart = () => {
                     </div>
                     <div class="flex items-center mb-4">
                         <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Make This My Permanent Address</label>
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 ">Make This My Permanent Address</label>
                     </div>
                 </div>
             </div>
