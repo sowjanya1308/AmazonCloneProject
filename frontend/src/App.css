@@ -178,7 +178,12 @@ label{
     width: 250px;
 }
 
-/* 
+
+/* delivery */
+.delivery{
+    border: 1px solid black;
+}
+
 @media (min-width: 768px) { 
     .auto-col-grid-250{
         width: 100%;
