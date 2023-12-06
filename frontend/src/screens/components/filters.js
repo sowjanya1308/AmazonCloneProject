@@ -18,23 +18,23 @@ const Filters = () => {
                 <div className='mt-2'>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Titan</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Titan</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Joker and Witch</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Joker and Witch</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sonata</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Sonata</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fossil</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Fossil</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">FastTrack</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">FastTrack</label>
                     </div>
                 </div>
             </div>
@@ -47,11 +47,11 @@ const Filters = () => {
                 <div className='mt-2'>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Male</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Male</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Female</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Female</label>
                     </div>
                 </div>
             </div>
@@ -63,9 +63,9 @@ const Filters = () => {
             </div>
             <div class="relative mb-6">
                 <label for="labels-range-input" class="sr-only"></label>
-                <input id="labels-range-input" type="range" value="1000" min="1000" max="30,000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"/>
-                <span class="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">1000</span>
-                <span class="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">30,000</span>
+                <input id="labels-range-input" name="priceRange" type="range" min="1000" max="30000" class="w-full h-2 rounded-lg appearance-none cursor-pointer"/>
+                <span class="text-sm absolute start-0 -bottom-6">1000</span>
+                <span class="text-sm absolute end-0 -bottom-6">30,000</span>
             </div>
             </div>
          </div>
@@ -77,19 +77,19 @@ const Filters = () => {
                 <div className='mt-2'>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">50% Off</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">50% Off</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">60% Off</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">60% Off</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">70% Off</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">70% Off</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">80% Off</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">80% Off</label>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@ const Filters = () => {
                 <div className='mt-2'>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Include Out of Stock</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Include Out of Stock</label>
                     </div>
                 </div>
             </div>
@@ -113,23 +113,23 @@ const Filters = () => {
                 <div className='mt-2'>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Black</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900 ">Black</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-red-500 dark:text-gray-300">Red</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-red-500 ">Red</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-pink-400 dark:text-gray-300">Pink</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-pink-400 ">Pink</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-blue-600 dark:text-gray-300">Blue</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-blue-600 ">Blue</label>
                     </div>
                     <div className="flex items-center">
                         <input id="default-checkbox" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"/>
-                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-purple-600 dark:text-gray-300">Purple</label>
+                        <label for="default-checkbox" className="ms-2 text-sm font-medium text-purple-600 ">Purple</label>
                     </div>
                 </div>
             </div>
