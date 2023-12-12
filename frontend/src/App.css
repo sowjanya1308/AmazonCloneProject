@@ -182,7 +182,20 @@ label{
 /* delivery */
 .delivery{
     border: 1px solid black;
+    border-radius: 8px;
 }
+
+.payment{
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
 
 @media (min-width: 768px) { 
     .auto-col-grid-250{
@@ -203,4 +216,4 @@ label{
         width: 100%;
         grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     }
-} */
+}

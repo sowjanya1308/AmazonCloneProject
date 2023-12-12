@@ -7,6 +7,8 @@ import ShoppingCart from './screens/components/shoppingcart';
 import categoryList from './screens/categoryProducts/categoryList';
 import Savedaddress from './screens/components/savedaddress';
 import AddProduct from './screens/addProduct/addProduct';
+import Wishlist from './screens/components/wishlist';
+import Newreleases from './screens/components/newreleases';
 
 
 
@@ -20,6 +22,8 @@ const App = () => {
       <Route path='/category' Component={categoryList}/>
       <Route path='/payment' Component={Savedaddress}/>
       <Route path='/add' Component={AddProduct}/>
+      <Route path='/wishlist' Component={Wishlist}/>
+      <Route path='/newreleases' Component={Newreleases}/>
     </Routes>
   )
 }

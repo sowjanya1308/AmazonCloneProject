@@ -103,9 +103,9 @@ const Header = () => {
               <div className="hidden md:ml-6 lg:block">
                 <div className="flex gap-2">
                   <a href="/" className="text-white bg-fuchsia-950 rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line">Categories</a>
-                  <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line">New Releases</a>
+                  <a href="/newreleases" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line">New Releases</a>
                   <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line">Buy Again</a>
-                  <a href="/" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line">Wishlist</a>
+                  <a href="/wishlist" className="text-white hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line">Wishlist</a>
                 </div>
               </div>
             </div>
