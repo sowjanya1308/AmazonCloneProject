@@ -23,7 +23,7 @@ const Savedaddress = () => {
                             <a href="/paymentdetails" className="text-blue-600">Edit Address</a>
                             </div>
                             <div className='ml-10'>
-                            <a href="/paymentdetails" className="text-blue-600">Delete Address</a>
+                            <a href="/paymentdetails" className="text-red-600">Delete Address</a>
                             </div>
                         </div>
                         {/* 2 */}
@@ -57,6 +57,7 @@ const Savedaddress = () => {
 
             {/* picture */}
             <div className="md:w-1/2 md:pl-8 mt-5">
+                <h1 className='font-semibold text-2xl'>Order Summary</h1>
                 <div className="img flex h-auto w-auto shadow-2xl">
                     <div className="flex-shrink-0">
                         <img src={watch} alt="watch" className="w-32 h-32 ml-6 mt-4 object-cover rounded-xl" />
@@ -87,6 +88,9 @@ const Savedaddress = () => {
         <div className='flex flex-col ml-5'>
             <div>
                 <h1 className="font-semibold text-2xl">Payment Details</h1>
+            </div>
+            <div className='payment mt-3'>
+                hello
             </div>
         </div>
     </div>
