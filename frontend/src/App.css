@@ -196,7 +196,7 @@ label{
 
 
 
-
+/* 
 @media (min-width: 768px) { 
     .auto-col-grid-250{
         width: 100%;
@@ -216,4 +216,4 @@ label{
         width: 100%;
         grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     }
-}
+} */

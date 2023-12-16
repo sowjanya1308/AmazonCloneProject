@@ -20,16 +20,13 @@ const Wishlist = (props) => {
       }
     }
 
-
-
-
   return (
     <>
     <Header/>
       <div className="container mx-auto p-8 mt-5">
         <h1 className="text-3xl font-semibold mb-8">Your Wishlist</h1>
 
-        <div className="img flex h-auto max-w-xl shadow-2xl">
+        <div className="img flex h-auto max-w-xl shadow-2xl relative">
             
             <div className="flex-shrink-0">
             <img src={watch} alt="watch" className="w-32 h-32 ml-6 mt-4 object-cover rounded-xl" />
@@ -37,12 +34,12 @@ const Wishlist = (props) => {
 
             <div className="flex flex-col flex-grow p-4">
             <div>
-                <div className='flex'>
+                <div className='flex '>
                     <div>
                     <h2 className="font-bold text-lg mb-2">Titan Quartz Multifunction White Dial Leather Strap Watch for Men</h2>
                     </div>
                     <div className="ml-auto">
-                    <div onClick={()=>fav(props.id)} className='absolute top-[5%] hover:shadow-lg hover:rounded-full p-2 right-[7%] z-10'>
+                    <div onClick={()=>fav(props.id)} className='absolute top-[7%] hover:shadow-lg hover:rounded-full p-2 left-[20%] z-10'>
                         <IoHeartOutline className='outline-heart' size={25} color='red' fill='#000' style={{"display":"block"}}/>
                         <FaHeart className='filled-heart' size={24} color='red' style={{"display":"none"}}/>
                     </div>
