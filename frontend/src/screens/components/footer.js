@@ -14,7 +14,7 @@ const Footer = () => {
                     <input
                         type="email"
                         id="email"
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400 focus:outline-none "
                         placeholder="name@gmail.com"
                         required
                     />
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <footer className="bg-fuchsia-900 text-white rounded-lg shadow m-4 dark:bg-gray-800">
+        <footer className="bg-fuchsia-900 text-white rounded-lg shadow m-4">
             <div className="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-center">
                 <span className="text-sm sm:text-center">
                     © 2023 <a href="#" className="hover:underline">ECommerceWebsite</a>. All Rights Reserved.
