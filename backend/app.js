@@ -1,28 +1,26 @@
 const express = require("express")
 const cors = require('cors')
 const dotenv = require("dotenv")
+const { sendEmail } = require("./controllers/mail");
+const routes = require("./router/routes")
 
 const app = express();
 
 // app
 app.use(cors())
-
+app.use(express.json());
 
 // env config
 dotenv.config({path: ".env"})
 
-// database
-const connectDB = require("./db/connection");
-const { sendEmail } = require("./controllers/mail");
 
-
+// connect routes
+app.use("/api/v1",routes);
 
 // start
 const port = process.env.PORT;
 const start = async()=>{
     try{
-        // await connectDB(process.env.MONGO_URI);
-        // sendEmail("sowjanyasankara@gmail.com","test mail","sent email successfully")
         app.listen(port,()=>{
             console.log(`successfully running on ${port}`);
         })
