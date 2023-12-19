@@ -18,7 +18,7 @@ const sendEmail = (sendto,subject,msg)=>{
         from:process.env.AUTH_MAIL,
         to:sendto,
         subject:subject,
-        text:msg,
+        html:msg
     });
 }
 
