@@ -17,6 +17,10 @@ dotenv.config({path: ".env"})
 // connect routes
 app.use("/api/v1",routes);
 
+app.get("/",async(req,res)=>{
+    req.cookies
+})
+
 // start
 const port = process.env.PORT;
 const start = async()=>{
