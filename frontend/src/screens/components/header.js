@@ -62,8 +62,8 @@ const Header = () => {
           <div id='sidebar' className='animate-sidebar absolute bg-white text-black z-10 h-[100vh] w-[40vw] top-0 left-0 rounded p-5'>
           <div className='flex justify-end'>
               <button onClick={closeSidebar} className='rounded-full bg-white p-2 shadow-lg'>
-                <svg className=" h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <svg className=" h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
@@ -81,7 +81,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-fuchsia-900">
+      <nav className="bg-fuchsia-900 sticky top-0 z-10">
         <div className="mx-auto flex justify-between  px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center">
             <div className="flex items-center lg:hidden mr-2">
@@ -90,8 +90,8 @@ const Header = () => {
                 <span className=" -inset-0.5"></span>
                 <span className="sr-only">Open main menu</span>
                 
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
               </button>
             </div>

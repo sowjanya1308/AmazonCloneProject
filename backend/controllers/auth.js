@@ -46,6 +46,7 @@ const createUser = async(req,res)=>{
 }
 
 const loginUser = async(req,res)=>{
+    res.set('Access-Control-Allow-Origin', '*');
     const {email,password} = req.body;
     if(!email || !password){
         return res.status(422).json({message:"Plz fill the fields properly"});
@@ -98,8 +99,11 @@ const loginUser = async(req,res)=>{
                         token:tokenUser
                     }
                 })
-                res.cookie("jwt",tokenUser)
-                return res.status(200).json({message:"Login Successfull"})
+                res.cookie("jwt",tokenUser,{
+                    expires:new Date(Date.now() + 25892000000),
+                    httpOnly : true
+                })
+                return res.status(200).json({message:"Login Successfull",token:tokenUser})
             }else{
                 return res.status(400).json({message:"Password Incorrect"})
             }
