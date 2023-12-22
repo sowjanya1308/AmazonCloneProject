@@ -9,22 +9,26 @@ import Savedaddress from './screens/components/savedaddress';
 import AddProduct from './screens/addProduct/addProduct';
 import Wishlist from './screens/components/wishlist';
 import Newreleases from './screens/components/newreleases';
-
-
+import {QueryClient, QueryClientProvider,} from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const App = () => {
+  const queryClient = new QueryClient();
   return (
-    <Routes>
-      <Route path='/' Component={Home}/>
-      <Route path='/product' Component={Product}/>
-      <Route path='/cart' Component={Addtocart}/>
-      <Route path='/paymentdetails' Component={ShoppingCart}/>
-      <Route path='/category' Component={categoryList}/>
-      <Route path='/payment' Component={Savedaddress}/>
-      <Route path='/add' Component={AddProduct}/>
-      <Route path='/wishlist' Component={Wishlist}/>
-      <Route path='/newreleases' Component={Newreleases}/>
-    </Routes>
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path='/' Component={Home}/>
+        <Route path='/product' Component={Product}/>
+        <Route path='/cart' Component={Addtocart}/>
+        <Route path='/paymentdetails' Component={ShoppingCart}/>
+        <Route path='/category' Component={categoryList}/>
+        <Route path='/payment' Component={Savedaddress}/>
+        <Route path='/add' Component={AddProduct}/>
+        <Route path='/wishlist' Component={Wishlist}/>
+        <Route path='/newreleases' Component={Newreleases}/>
+      </Routes>
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
+    </QueryClientProvider>
   )
 }
 
