@@ -1,10 +1,11 @@
 import React from 'react';
 import img1 from "../../images/img1.png";
+import img2 from "../../images/img2.png";
 
 const Carousel = () => {
   return (
     <>
-        <div id="animation-carousel" className="relative w-full" data-carousel="static">
+        <div id="animation-carousel" className="relative w-full z-10" data-carousel="static">
 
             <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
 
@@ -13,7 +14,7 @@ const Carousel = () => {
                 </div>
 
                 <div className="duration-200 ease-linear" data-carousel-item>
-                    <img src={img1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img"/>
+                    <img src={img2} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img"/>
                 </div>
 
                 <div className="duration-200 ease-linear" data-carousel-item="active">

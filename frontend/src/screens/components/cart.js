@@ -7,7 +7,7 @@ const Addtocart = () => {
   return (
     <>
       <Header/>
-      <div className="container mx-auto p-8 flex items-center">
+      <div className="container mx-auto p-8 flex">
         {/* flex left */}
         <div>
             <h1 className="text-3xl font-semibold mb-8">Your Cart</h1>
@@ -56,6 +56,9 @@ const Addtocart = () => {
                 <div className="flex-shrink-0">
                 <img src={watch} alt="watch" className="w-32 h-32 ml-6 mt-4 object-cover rounded-xl" />
                 </div>
+                <div>
+
+                </div>
 
                 <div className="flex flex-col flex-grow p-4">
                 <div>
@@ -82,19 +85,19 @@ const Addtocart = () => {
                 </div>
                 </div>
             </div>
-            </div>
+        </div>
 
         {/* flex right */}
         <div className='ml-auto'>
-        <div className="flex flex-col mt-8 justify-end">
-            <div>
-            <h1 className="text-2xl font-normal">Subtotal: <b>₹18290</b></h1>
-            </div>
-            <div className="mt-4">
-            <button className="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 text-white font-medium rounded-lg text-sm px-5 py-2.5">Checkout</button>
+            <div className="flex flex-col justify-end">
+                <div>
+                <h1 className="text-2xl font-normal">Subtotal: <b>₹18290</b></h1>
+                </div>
+                <div className="mt-4">
+                <button className="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 text-white font-medium rounded-lg text-sm px-5 py-2.5">Checkout</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
         
