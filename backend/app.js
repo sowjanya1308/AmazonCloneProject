@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require('cors')
 const dotenv = require("dotenv")
+// const firebase = require("firebase/app")
 const cookieParser = require("cookie-parser")
 const { sendEmail } = require("./controllers/mail");
 const routes = require("./router/routes")
@@ -17,6 +18,7 @@ dotenv.config({path: ".env"})
 
 
 // connect routes
+
 app.use("/api/v1",routes);
 
 
