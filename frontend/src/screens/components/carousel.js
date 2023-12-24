@@ -9,7 +9,7 @@ const Carousel = () => {
 
             <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
 
-                <div className="hidden duration-200 ease-linear" data-carousel-item>
+                <div className="duration-200 ease-linear" data-carousel-item>
                     <img src={img1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img1"/>
                 </div>
 
@@ -17,15 +17,15 @@ const Carousel = () => {
                     <img src={img2} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img"/>
                 </div>
 
-                <div className="hidden duration-200 ease-linear" data-carousel-item="active">
+                <div className="duration-200 ease-linear" data-carousel-item="active">
                     <img src={img1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img"/>
                 </div>
 
-                <div className="hidden duration-200 ease-linear" data-carousel-item>
+                <div className="duration-200 ease-linear" data-carousel-item>
                     <img src={img1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img"/>
                 </div>
 
-                <div className="hidden duration-200 ease-linear" data-carousel-item>
+                <div className="duration-200 ease-linear" data-carousel-item>
                     <img src={img1} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="img"/>
                 </div>
             </div>
