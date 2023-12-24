@@ -19,7 +19,36 @@ const storage = getStorage(getApp(), "gs://ecommerce-5e03f.appspot.com")
 
 
 const addProduct = async(req,res)=>{
-    console.log(req.body);
+    const {image,title,price,discount,description,color,weight,type,origin} = req.body;
+    if(!image||!title || !price || !discount || !description || !color || !weight || !type || !origin){
+        return res.status(422).json({message:"Plz fill the fields properly"});
+    }
+    try{
+            await prisma.product.create({
+                data:{
+                    image:image,
+                    title:title,
+                    price:price,
+                    discount:discount,
+                    description:description,
+                    color:color,
+                    weight:weight,
+                    type:type,
+                    origin:origin,
+                }
+            })
+            // sendEmail(email,"Registration Successfull",
+            //     `<center>
+            //     <h1>Welcome ${name}</h1>
+            //     <h3>Thank you for choosing E-commerce platform</h3>
+            //     <p>Have a worderfull shopping</p>
+            //     </center>
+            //     `
+            // )
+            res.status(201).json({message:"product added successfully"});
+    }catch(err){
+        console.log(err);
+    }
 }
 
 module.exports = {addProduct}

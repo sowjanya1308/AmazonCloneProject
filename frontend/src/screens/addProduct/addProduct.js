@@ -44,12 +44,18 @@ const AddProduct = () => {
     const evt=(e)=>{
         const preview = document.querySelector(".load-images");
         const file = e.target.files
-        console.log(e);
+        console.log(Object.values(file));
         setProduct({...product,image:Object.values(file)})
         while(preview.firstChild){
             preview.removeChild(preview.firstChild)
         }
+        
         Object.values(file).map((e)=>{
+            let reader = new FileReader()
+            reader.readAsDataURL(file[0])
+            console.log(reader);
+            console.log(reader.result);
+            setProduct({...product,image:[...product.image, reader.result]})
             const node = document.createElement("img")
             node.src = URL.createObjectURL(e)
             node.width = 120
