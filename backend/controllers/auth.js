@@ -100,8 +100,9 @@ const loginUser = async(req,res)=>{
                     }
                 })
                 res.cookie("jwt",tokenUser,{
-                    expires:new Date(Date.now() + 25892000000),
-                    httpOnly : true
+                    expires:new Date(Date.now() + 25600000),
+                    sameSite:"None",
+                    httpOnly : true,
                 })
                 return res.status(200).json({message:"Login Successfull",token:tokenUser})
             }else{

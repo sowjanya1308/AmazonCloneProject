@@ -11,7 +11,6 @@ const Login = (props) => {
 
   const {loading, response, userDetails, loggedin} = useSelector(state => state.user);
 
-
   const initform = {
     name:"",
     email:"",
