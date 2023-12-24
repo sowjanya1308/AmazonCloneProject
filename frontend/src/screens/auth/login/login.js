@@ -28,7 +28,7 @@ const Login = (props) => {
     setForm({...form, [field]:e.target.value})
   }
 
-  const {mutate:fields,} = useMutation({
+  const {mutate:fields} = useMutation({
     mutationFn:(signup)?userRegister:userLogin,
     onSuccess:(d)=>{
       console.log(d);
