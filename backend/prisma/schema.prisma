@@ -33,4 +33,5 @@ model product{
   type String
   weight String
   origin String
+  company String
 }

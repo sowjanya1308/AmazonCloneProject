@@ -19,8 +19,8 @@ const storage = getStorage(getApp(), "gs://ecommerce-5e03f.appspot.com")
 
 
 const addProduct = async(req,res)=>{
-    const {image,title,price,discount,description,color,weight,type,origin} = req.body;
-    if(!image||!title || !price || !discount || !description || !color || !weight || !type || !origin){
+    const {image,title,price,discount,description,color,weight,type,origin, company} = req.body;
+    if(!image||!title || !price || !discount || !description || !color || !weight || !type || !origin || !company){
         return res.status(422).json({message:"Plz fill the fields properly"});
     }
     try{
@@ -35,6 +35,7 @@ const addProduct = async(req,res)=>{
                     weight:weight,
                     type:type,
                     origin:origin,
+                    company:company,
                 }
             })
             // sendEmail(email,"Registration Successfull",
