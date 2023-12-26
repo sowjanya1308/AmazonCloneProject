@@ -5,7 +5,7 @@ import img2 from "../../images/img2.png";
 const Carousel = () => {
   return (
     <>
-        <div id="animation-carousel" className="relative w-full z-10" data-carousel="static">
+        <div id="animation-carousel" className="relative w-full" data-carousel="static">
 
             <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
 

@@ -41,5 +41,5 @@ const productSlice = createSlice({
     }
 })
 
-export const {authRequest, authSuccess, authFailed, authError, authLogout,currentUserDetails} = productSlice.actions;
+export const {productRequest, productSuccess, productFailed, productError, productLogout,currentProductDetails} = productSlice.actions;
 export const productReducer = productSlice.reducer;

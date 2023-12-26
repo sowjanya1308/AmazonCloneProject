@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { IoAddSharp } from "react-icons/io5";
 import {useMutation} from "@tanstack/react-query"
 import {addNewProduct,} from "../../redux/productRelated/productHandle"
+import {useDispatch} from "react-redux"
+import { productSuccess } from '../../redux/productRelated/productSlice';
+
 
 const initialstate = {
-    image: [],
+    image:[],
     title:"",
     price:"",
     discount:"",
@@ -13,6 +16,8 @@ const initialstate = {
     type:"",
     weight:"",
     origin:"",
+    company:"",
+    category:"",
     productDesc:{}
 }
 
@@ -23,6 +28,7 @@ const productDetails = {
 }
 
 const AddProduct = () => {
+    const dispatch = useDispatch();
     const [field,setField] = useState(0);
     const [product, setProduct] = useState(initialstate)
     const [details,setDetails] = useState(productDetails)
@@ -37,8 +43,13 @@ const AddProduct = () => {
         setDetails({...details, [field]:e.target.value})
     }
 
-    const {status,response,error,mutate:item} = useMutation({
+    const {mutate:item} = useMutation({
         mutationFn:addNewProduct,
+        onSuccess:(data)=>{
+            console.log(data);
+            dispatch(productSuccess(data.data.message))
+            alert(data.data.message)
+        }
     })
 
     const evt=(e)=>{
@@ -49,13 +60,7 @@ const AddProduct = () => {
         while(preview.firstChild){
             preview.removeChild(preview.firstChild)
         }
-        
         Object.values(file).map((e)=>{
-            let reader = new FileReader()
-            reader.readAsDataURL(file[0])
-            console.log(reader);
-            console.log(reader.result);
-            setProduct({...product,image:[...product.image, reader.result]})
             const node = document.createElement("img")
             node.src = URL.createObjectURL(e)
             node.width = 120
@@ -74,16 +79,24 @@ const AddProduct = () => {
 
     const addProduct=(e)=>{
         e.preventDefault()
-        // setProduct({...product, productDesc:{
-        //     color:details.color,
-        //     type:details.type,
-        //     weight:details.weight,
-        //     origin:details.origin,
-        //     [details.field1_input]:details.field1_value,
-        //     [details.field2_input]:details.field2_value,
-        //     [details.field3_input]:details.field3_value
-        // }})
-        item(product)
+        console.log(product.productDesc);
+        console.log(JSON.stringify(product.productDesc));
+        const formdata = new FormData();
+        product.image.map((e)=>{
+            return formdata.append("image",e)
+        })
+        formdata.append("title",product.title)
+        formdata.append("description",product.description)
+        formdata.append("company",product.company)
+        formdata.append("category",product.category)
+        formdata.append("additionaldetails",JSON.stringify(product.productDesc))
+        formdata.append("price",product.price)
+        formdata.append("discount",product.discount)
+        formdata.append("color",product.color)
+        formdata.append("origin",product.origin)
+        formdata.append("type",product.type)
+        formdata.append("weight",product.weight)
+        item(formdata)
     }
 
   return (
@@ -98,11 +111,15 @@ const AddProduct = () => {
                     </div>
                 </div>
                 <label htmlFor='title' className='text-xl'>Title</label>
-                <input id='title' type='text' placeholder='product title' onChange={handleFields} value={product.title} className='w-full p-3 rounded mb-2'/>
+                <input id='title' type='text' placeholder='iphone15' onChange={handleFields} value={product.title} className='w-full p-3 rounded mb-2'/>
                 <label htmlFor='price' className='text-xl'>MRP Price</label>
-                <input id='price' type='number' placeholder='price' onChange={handleFields} value={product.price} className='w-full p-3 rounded mb-2'/>
+                <input id='price' type='number' placeholder='200000/-' onChange={handleFields} value={product.price} className='w-full p-3 rounded mb-2'/>
                 <label htmlFor='discount' className='text-xl'>Discount</label>
-                <input id='discount' type='number' placeholder='discount' onChange={handleFields} value={product.discount} className='w-full p-3 rounded mb-2'/>
+                <input id='discount' type='number' placeholder='12%' onChange={handleFields} value={product.discount} className='w-full p-3 rounded mb-2'/>
+                <label htmlFor='company' className='text-xl'>Company</label>
+                <input id='company' type='text' placeholder='Apple...' onChange={handleFields} value={product.company} className='w-full p-3 rounded mb-2'/>
+                <label htmlFor='category' className='text-xl'>category</label>
+                <input id='category' type='text' placeholder='Mobile...' onChange={handleFields} value={product.category} className='w-full p-3 rounded mb-2'/>
                 <label htmlFor='desc' className='text-xl'>Item Description</label>
                 <textarea className='w-full p-3 mb-2 rounded' rows={10} placeholder='description' onChange={handleFields} value={product.description} id='description'/>
                 <label className='text-xl font-bold'>Product Details</label>
@@ -116,31 +133,31 @@ const AddProduct = () => {
                     <tbody className='relative'>
                         <tr >
                             <td><label htmlFor='color'>Color</label></td>
-                            <td className='p-5'><input id='color' type='text' placeholder='color' className='w-full p-3 rounded ' onChange={handleFields} value={product.color} /></td>
+                            <td className='p-5'><input id='color' type='text' placeholder='green' className='w-full p-3 rounded ' onChange={handleFields} value={product.color} /></td>
                         </tr>
                         <tr>
                             <td><label htmlFor='material'>Material Type</label></td>
-                            <td className='p-5'><input id='type' type='text' placeholder='leather ...' className='w-full p-3 rounded ' onChange={handleFields} value={product.type}/></td>
+                            <td className='p-5'><input id='type' type='text' placeholder='metal' className='w-full p-3 rounded ' onChange={handleFields} value={product.type}/></td>
                         </tr>
                         <tr>
                             <td><label htmlFor='Weight'>Weight</label></td>
-                            <td className='p-5'><input id='weight' type='text' placeholder='weight' className='w-full p-3 rounded ' onChange={handleFields} value={product.weight}/></td>
+                            <td className='p-5'><input id='weight' type='text' placeholder='1.5KG' className='w-full p-3 rounded ' onChange={handleFields} value={product.weight}/></td>
                         </tr>
                         <tr>
                             <td><label htmlFor='Origin'>Origin</label></td>
-                            <td className='p-5'><input id='origin' type='text' placeholder='Origin' className='w-full p-3 rounded ' onChange={handleFields} value={product.origin}/></td>
+                            <td className='p-5'><input id='origin' type='text' placeholder='India' className='w-full p-3 rounded ' onChange={handleFields} value={product.origin}/></td>
                         </tr>
                         <tr className='rowadd' style={{"display":"none"}}>
                             <td className='p-5'><input id='field1_input' type='text' placeholder='type' className='w-full p-3 rounded ' onChange={handleDetails} value={details.field1_input}/></td>
-                            <td className='p-5'><input id='field1_value' type='text' placeholder='value' className='w-full p-3 rounded ' onChange={(e)=>[setProduct({...product, productDesc:{[details.field1_input]:e.target.value}})]} value={product[details.field1_input]} /></td>
+                            <td className='p-5'><input id='field1_value' type='text' placeholder='value' className='w-full p-3 rounded ' onChange={(e)=>[setProduct({...product, productDesc:{...product.productDesc,[details.field1_input]:e.target.value}})]} value={product[details.field1_input]} /></td>
                         </tr>
                         <tr className='rowadd' style={{"display":"none"}}>
                             <td className='p-5'><input id='field2_input' type='text' placeholder='type' className='w-full p-3 rounded ' onChange={handleDetails} value={details.field2_input}/></td>
-                            <td className='p-5'><input id='field2_value' type='text' placeholder='value' className='w-full p-3 rounded ' onChange={(e)=>[setProduct({...product, productDesc:{[details.field2_input]:e.target.value}})]} value={product[details.field2_input]}/></td>
+                            <td className='p-5'><input id='field2_value' type='text' placeholder='value' className='w-full p-3 rounded ' onChange={(e)=>[setProduct({...product, productDesc:{...product.productDesc,[details.field2_input]:e.target.value}})]} value={product[details.field2_input]}/></td>
                         </tr>
                         <tr className='rowadd' style={{"display":"none"}}>
                             <td className='p-5'><input id='field3_input' type='text' placeholder='type' className='w-full p-3 rounded ' onChange={handleDetails} value={product.field3_input}/></td>
-                            <td className='p-5'><input id='field3_value' type='text' placeholder='value' className='w-full p-3 rounded ' onChange={(e)=>[setProduct({...product, productDesc:{[details.field3_input]:e.target.value}})]} value={product[details.field3_input]}/></td>
+                            <td className='p-5'><input id='field3_value' type='text' placeholder='value' className='w-full p-3 rounded ' onChange={(e)=>[setProduct({...product, productDesc:{...product.productDesc,[details.field3_input]:e.target.value}})]} value={product[details.field3_input]}/></td>
                         </tr>
                         <p id='addRow' onClick={addRow} className='absolute bottom-[-6%] shadow-lg left-[48.5%] bg-white w-fit p-3 rounded-full cursor-pointer'><IoAddSharp/></p>
                         <p className='absolute right-0 left-0 mt-7 text-center'> {field===3 ? "Refresh to reset":`${3-field} more fields you can add`}</p>

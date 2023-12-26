@@ -24,7 +24,7 @@ model users{
 
 model product{
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  image String
+  image String[]
   title String
   price String
   discount String
@@ -33,5 +33,7 @@ model product{
   type String
   weight String
   origin String
+  additionaldetails Json
   company String
+  category String
 }
