@@ -1,18 +1,23 @@
-import React from 'react'
-import Header from '../components/header';
+import React, { Suspense, lazy } from 'react'
 import HorizontalScrollCards from '../components/horizontalScrollCards';
-import CategoryGrid from './components/categoryGrid';
-import Footer from '../components/footer';
-import Carousel from '../components/carousel';
+const Header = lazy(()=>import('../components/header')) ;
+const CategoryGrid = lazy(()=>import('./components/categoryGrid')) ;
+const Footer = lazy(()=>import('../components/footer'));
+const Carousel = lazy(()=>import('../components/carousel'));
 
 const Home = () => {
 
   return (
     <>
-      <Header/>
+      <Suspense fallback={<>Loading...</>}>
+        <Header/>
+      </Suspense>
+        
+      <Suspense fallback={<>Loading...</>}>
         <Carousel/>
-        <HorizontalScrollCards id={0}/>
-        <HorizontalScrollCards id={1}/>
+      </Suspense>
+        {/* <HorizontalScrollCards id={0}/>
+        <HorizontalScrollCards id={1}/> */}
           <div className='mx-14'>
             <div className='grid auto-col-grid items-center'>
               <CategoryGrid/>
@@ -23,7 +28,7 @@ const Home = () => {
               <CategoryGrid/>
             </div>
           </div>
-        <HorizontalScrollCards id={2}/>
+        {/* <HorizontalScrollCards id={2}/> */}
         <Footer/>
     </>
   )

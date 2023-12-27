@@ -39,8 +39,6 @@ const Login = (props) => {
     },
   })
 
-  console.log(response);
-
   const login= (e)=>{
     e.preventDefault();
     fields({

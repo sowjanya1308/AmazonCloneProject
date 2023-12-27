@@ -1,6 +1,6 @@
 const express = require("express")
 const {createUser, loginUser} = require("../controllers/auth");
-const { addProduct } = require("../controllers/product");
+const { addProduct, getProducts } = require("../controllers/product");
 const multer = require("multer")
 // const storage = multer.diskStorage({
 //     destination:function(req,file,cb){
@@ -17,6 +17,7 @@ const router = express();
 router.post("/register",createUser),
 router.post("/login",loginUser),
 router.post("/addProduct",upload.array('image'),addProduct),
+router.get("/getproducts",getProducts)
 // router.post("/uploadImage", , imageupload)
 
 module.exports = router;

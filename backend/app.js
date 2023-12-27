@@ -4,7 +4,6 @@ const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser")
 const { sendEmail } = require("./controllers/mail");
 const routes = require("./router/routes")
-
 const app = express();
 
 // app

@@ -5,7 +5,6 @@ const initialState = {
     productDetails: [],
     response: "",
     error: "",
-    loggedin:false
 }
 
 const productSlice = createSlice({
@@ -19,7 +18,6 @@ const productSlice = createSlice({
             state.loading = false;
             state.response = action.payload;
             state.error = null;
-            state.loggedin = true;
         },
         productFailed:(state,action)=>{
             state.loading = false;
@@ -29,17 +27,13 @@ const productSlice = createSlice({
             state.error = action.payload;
             state.loading = false;
         },
-        productLogout:(state,action)=>{
+        ProductDetails:(state,action)=>{
+            state.productDetails = action.payload;
             state.loading = false;
-            state.response = null;
-            state.error = null;
-            state.loggedin = false;
-        },
-        currentProductDetails:(state,action)=>{
-            state.userDetails = action.payload;
+            state.error = false;
         }
     }
 })
 
-export const {productRequest, productSuccess, productFailed, productError, productLogout,currentProductDetails} = productSlice.actions;
+export const {productRequest, productSuccess, productFailed, productError,ProductDetails} = productSlice.actions;
 export const productReducer = productSlice.reducer;

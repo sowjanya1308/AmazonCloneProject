@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { IoPersonCircleOutline, IoBagHandleOutline, IoSearchOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import logo from "../../images/logo.png";
-import Login from '../auth/login/login';
+
+const Login = lazy(()=>import('../auth/login/login'));
 
 const Header = () => {
   const [popup, setPopup] = useState(false);
@@ -69,9 +70,9 @@ const Header = () => {
             </div>
             <ul className='mt-5'>
               <li><a href="/" className="text-white bg-fuchsia-950 rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line mb-2">Categories</a></li>
-              <li><a href="/" className="hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line mb-2">New Releases</a></li>
+              <li><a href="/newreleases" className="hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line mb-2">New Releases</a></li>
               <li><a href="/" className="hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line mb-2">Buy Again</a></li>
-              <li><a href="/" className="hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line mb-2">Wishlist</a></li>
+              <li><a href="/wishlist" className="hover:bg-fuchsia-950 hover:text-white rounded-md px-3 py-2 text-sm font-medium w-fit flex items-center single-line mb-2">Wishlist</a></li>
             </ul>
           </div>
         </div>
@@ -98,7 +99,7 @@ const Header = () => {
             <SideBar/>
             <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex items-center mr-2">
-                <img className="h-10 max-w-[15rem]" src={logo} alt="Your Company"/>
+                <img className="h-10 max-w-[15rem]" src={logo} alt="Your Company" loading='lazy'/>
               </div>
               <div className="hidden md:ml-6 lg:block">
                 <div className="flex gap-2">
@@ -136,7 +137,9 @@ const Header = () => {
                       <span className="sr-only">Open user menu</span>
                       <IoPersonCircleOutline className='text-white text-2xl'/>
                     </button>
-                    <Login showPopup={popup} close={closepopup}/>
+                    <Suspense fallback={<><h1>Loading...</h1></>}>
+                      <Login showPopup={popup} close={closepopup}/>
+                    </Suspense>
                   </div>
                 </div>
                 
