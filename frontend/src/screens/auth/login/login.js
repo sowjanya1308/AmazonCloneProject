@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
 import {useSelector,useDispatch} from 'react-redux';
 import { userLogin,userRegister } from '../../../redux/userRelated/userHandle';
-import {useQuery,useMutation} from "@tanstack/react-query";
-import { authError, authSuccess } from '../../../redux/userRelated/userSlice';
+import {useMutation} from "@tanstack/react-query";
+import { authSuccess, currentUserDetails } from '../../../redux/userRelated/userSlice';
 
 const Login = (props) => {
 
@@ -32,6 +32,7 @@ const Login = (props) => {
     onSuccess:(d)=>{
       console.log(d);
       dispatch(authSuccess(d.data.message))
+      dispatch(currentUserDetails(d.data.user))
     },
     onError:(error)=>{
       console.log(error);

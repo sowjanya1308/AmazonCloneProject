@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  // previewFeatures = ["mongodb"]
+  previewFeatures = ["mongodb"]
 }
 
 datasource db {
@@ -38,3 +38,9 @@ model product{
   category String
   newrelease Boolean?
 }
+
+// model wishlist{
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   // user users @relation(fields: [userid], references: [id])
+//   userid String @db.ObjectId
+// }

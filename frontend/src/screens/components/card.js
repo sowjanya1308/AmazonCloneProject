@@ -2,8 +2,11 @@ import React from 'react';
 import { IoHeartOutline } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import { TiStarFullOutline } from "react-icons/ti";
+import {useNavigate} from "react-router-dom";
 
 const Card = (props) => {
+
+    const navigate = useNavigate();
 
 
   function fav(id){
@@ -26,13 +29,13 @@ const Card = (props) => {
 
   return (
     <>
-      <div className='card shadow-lg rounded-[8px] border flex flex-col h-auto relative bg-white'>
+      <div onClick={()=>navigate(`/product/${props.item.id}`)} className='card shadow-lg rounded-[8px] border flex flex-col h-auto relative bg-white'>
         <div onClick={()=>fav(props.id)} className='absolute top-[5%] hover:shadow-lg hover:rounded-full p-2 right-[7%] z-10'>
           <IoHeartOutline className='outline-heart' size={25} color='red' fill='#000' style={{"display":"block"}}/>
           <FaHeart className='filled-heart' size={24} color='red' style={{"display":"none"}}/>
         </div>
         <div className='h-[345px] justify-center w-auto relative'>
-            <img src={props.item.image[0]} alt='watch' className='object-fit w-[100%] h-[100%]'/>
+            <img src={props.item.image[0]} alt='watch' className='object-fit w-[100%] h-[100%]' loading='lazy'/>
             <div className='absolute bottom-[5%] right-[7%]'>
               <span className='px-3 rounded shadow-lg flex items-center'>5
                 <TiStarFullOutline />

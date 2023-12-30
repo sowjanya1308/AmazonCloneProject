@@ -8,7 +8,7 @@ import Card from './card';
 
 const Newreleases = () => {
 
-  const {data,isLoading, isSuccess,error,isError} = useQuery({
+  const {data,isLoading, isSuccess} = useQuery({
     queryKey:["products"],
     queryFn:()=>getProducts({"newrelease":"true"}),
   })

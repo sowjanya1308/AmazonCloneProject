@@ -2,11 +2,17 @@ import React, { useState, lazy, Suspense } from 'react';
 import { IoPersonCircleOutline, IoBagHandleOutline, IoSearchOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import logo from "../../images/logo.png";
+import {useSelector,useDispatch} from "react-redux"
+import { NavLink } from 'react-router-dom';
+import { authLogout } from '../../redux/userRelated/userSlice';
 
 const Login = lazy(()=>import('../auth/login/login'));
 
 const Header = () => {
   const [popup, setPopup] = useState(false);
+
+  const {loading, response, userDetails, loggedin} = useSelector(state => state.user);
+  const dispatch = useDispatch();
 
   const showPopup=()=>{
     switch(popup){
@@ -130,16 +136,26 @@ const Header = () => {
                   </button>
                 </div>
                 
-                <div className="relative ml-3">
-                  <div>
-                    <button onClick={showPopup} type="button" className="relative flex text-sm focus:outline-none rounded hover:bg-fuchsia-950" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <div className="relative ml-3 ">
+                  <div className={`${(loggedin)&&'open-menu'} relative`}>
+                    <button onClick={(!loggedin)?showPopup:null} type="button" className="relative flex text-sm focus:outline-none rounded hover:bg-fuchsia-950" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                       <span className="absolute -inset-1.5"></span>
                       <span className="sr-only">Open user menu</span>
-                      <IoPersonCircleOutline className='text-white text-2xl'/>
+                      <IoPersonCircleOutline className='text-white text-2xl '/>
                     </button>
+                    <div className='absolute menu bg-white rounded-md px-5 py-2 flex flex-col whitespace-nowrap z-30'>
+                        <p className='py-2 text-lg font-semibold border-b-2 border-x-blue-400'>{userDetails.name}</p>
+                        <ul>
+                          <NavLink className=''><li className='hover:bg-slate-100 rounded-md p-2 border-b-2 border-x-blue-400'>Orders</li></NavLink>
+                          <NavLink className=''><li className='hover:bg-slate-100 rounded-md p-2 border-b-2 border-x-blue-400'>Cart</li></NavLink>
+                          <NavLink onClick={()=>dispatch(authLogout())}><li className='hover:bg-slate-100 rounded-md p-2'>Logout</li></NavLink>
+                        </ul>
+                    </div>
+                    
                     <Suspense fallback={<><h1>Loading...</h1></>}>
-                      <Login showPopup={popup} close={closepopup}/>
+                      {(!loggedin)&&<Login showPopup={popup} close={closepopup}/>}
                     </Suspense>
+                    
                   </div>
                 </div>
                 

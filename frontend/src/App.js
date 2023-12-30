@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './screens/home/home';
-import Product from './screens/components/product';
-import Addtocart from './screens/components/cart';
-import ShoppingCart from './screens/components/shoppingcart';
-import categoryList from './screens/categoryProducts/categoryList';
-import Savedaddress from './screens/components/savedaddress';
-import AddProduct from './screens/addProduct/addProduct';
-import Wishlist from './screens/components/wishlist';
-import Newreleases from './screens/components/newreleases';
 import {QueryClient, QueryClientProvider,} from "@tanstack/react-query";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+
+const Product = lazy(()=>import('./screens/components/product'));
+const Newreleases = lazy(()=>import('./screens/components/newreleases')) ;
+const Home = lazy(()=>import('./screens/home/home')) ;
+const Addtocart = lazy(()=>import('./screens/components/cart')) ;
+const ShoppingCart = lazy(()=>import('./screens/components/shoppingcart')) ;
+const Savedaddress = lazy(()=>import('./screens/components/savedaddress')) ;
+const AddProduct = lazy(()=>import('./screens/addProduct/addProduct')) ;
+const Wishlist = lazy(()=>import('./screens/components/wishlist')) ;
+
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -23,15 +25,15 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
-        <Route path='/' Component={Home}/>
-        <Route path='/product' Component={Product}/>
-        <Route path='/cart' Component={Addtocart}/>
-        <Route path='/paymentdetails' Component={ShoppingCart}/>
-        <Route path='/category' Component={categoryList}/>
-        <Route path='/payment' Component={Savedaddress}/>
-        <Route path='/add' Component={AddProduct}/>
-        <Route path='/wishlist' Component={Wishlist}/>
-        <Route path='/newreleases' Component={Newreleases}/>
+        <Route path='/' element={<Suspense fallback={<>Loading...</>}><Home/></Suspense>}/>
+        <Route path='/product/:id' element={<Suspense fallback={<>Loading...</>}><Product/></Suspense>}/>
+        <Route path='/cart' element={<Suspense fallback={<>Loading...</>}><Addtocart/></Suspense>}/>
+        <Route path='/paymentdetails' element={<Suspense fallback={<>Loading...</>}><ShoppingCart/></Suspense>}/>
+        <Route path='/category' element={<Suspense fallback={<>Loading...</>}><categoryList/></Suspense>}/>
+        <Route path='/payment' element={<Suspense fallback={<>Loading...</>}><Savedaddress/></Suspense>}/>
+        <Route path='/add' element={<Suspense fallback={<>Loading...</>}><AddProduct/></Suspense>}/>
+        <Route path='/wishlist' element={<Suspense fallback={<>Loading...</>}><Wishlist/></Suspense>}/>
+        <Route path='/newreleases' element={<Suspense fallback={<>Loading...</>}><Newreleases/></Suspense>}/>
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>
     </QueryClientProvider>

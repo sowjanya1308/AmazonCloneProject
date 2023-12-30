@@ -56,8 +56,11 @@ module.exports.addProduct = async(req,res)=>{
 }
 
 module.exports.getProducts = async(req,res)=>{
-    const {page,newrelease,price,discount,color,category,type,company} = req.query;
+    const {page,newrelease,price,discount,color,category,type,company,id} = req.query;
     const querylist = {}
+    if(id){
+        querylist.id = id;
+    }
     if(newrelease){
         querylist.newrelease = Boolean(newrelease);
     }
