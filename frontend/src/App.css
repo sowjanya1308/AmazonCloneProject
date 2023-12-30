@@ -193,7 +193,14 @@ label{
 
 
 
+.menu{
+    display: none;
+}
 
+.open-menu:hover .menu{
+    display: block;
+    transform: translateX(-50px);
+}
 
 
 /* 

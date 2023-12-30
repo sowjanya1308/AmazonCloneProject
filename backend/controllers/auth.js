@@ -104,7 +104,12 @@ const loginUser = async(req,res)=>{
                     sameSite:"None",
                     httpOnly : true,
                 })
-                return res.status(200).json({message:"Login Successfull",token:tokenUser})
+                return res.status(200).json({message:"Login Successfull",token:tokenUser,user:{
+                    "id":userExist.id,
+                    "name":userExist.name,
+                    "phone":userExist.phone,
+                    "email":userExist.email,
+                }})
             }else{
                 return res.status(400).json({message:"Password Incorrect"})
             }

@@ -1,18 +1,19 @@
 import React from 'react'
-import Header from '../components/header';
 import HorizontalScrollCards from '../components/horizontalScrollCards';
-import CategoryGrid from './components/categoryGrid';
+import Header from '../components/header';
+import CategoryGrid from './components/categoryGrid' ;
 import Footer from '../components/footer';
 import Carousel from '../components/carousel';
 
 const Home = () => {
 
+
   return (
     <>
-      <Header/>
+        <Header/>
         <Carousel/>
-        <HorizontalScrollCards id={0}/>
-        <HorizontalScrollCards id={1}/>
+        <HorizontalScrollCards id={0} params={{"category":"watch"}}/>
+        <HorizontalScrollCards id={1} params={{"category":"mobile"}}/>
           <div className='mx-14'>
             <div className='grid auto-col-grid items-center'>
               <CategoryGrid/>
@@ -23,7 +24,7 @@ const Home = () => {
               <CategoryGrid/>
             </div>
           </div>
-        <HorizontalScrollCards id={2}/>
+        <HorizontalScrollCards id={2} params={{"category":"decoration"}}/>
         <Footer/>
     </>
   )

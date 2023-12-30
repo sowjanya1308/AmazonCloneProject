@@ -7,3 +7,9 @@ export const addNewProduct=(fields)=>{
         }
     });
 };
+
+export const getProducts = (fields)=>{
+    return axios.get("/getproducts",{
+        params:fields
+    });
+}
